@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: docker login
-      run: docker login -u dijounas -p dckr_pat_JE6PlWdbTxneG-n8BomWrcAjE38
+      run: docker login -u kazuke -p dckr_pat_1CS-q8L-k4KjFa--dkvMzwqYtQs
     - name: build image
-      run: docker build -t dijounas/study .
+      run: docker build -t kazuke/ecommerce .
     - name: push to docker
-      run: docker push dijounas/study
+      run: docker push kazuke/ecommerce
