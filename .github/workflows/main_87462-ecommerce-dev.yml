@@ -22,7 +22,7 @@ jobs:
     - name: Log in to registry
       uses: docker/login-action@v2
       with:
-        registry: https://mcr.microsoft.com/
+        registry: https://87462dev.azurecr.io/
         username: ${{ secrets.AzureAppService_ContainerUsername_5f9197e3e71f4d3fae5de36d877d224b }}
         password: ${{ secrets.AzureAppService_ContainerPassword_618f3891a7fd434ab4348769a5c9c18d }}
 
@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_5f9197e3e71f4d3fae5de36d877d224b }}/kazuke/ecommerce:${{ github.sha }}
+        tags: 87462dev.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5f9197e3e71f4d3fae5de36d877d224b }}/kazuke/ecommerce:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: '87462-ecommerce-dev'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b951a6341e134404b7c3cb20e39a0e04 }}
-        images: 'mcr.microsoft.com/${{ secrets.AzureAppService_ContainerUsername_5f9197e3e71f4d3fae5de36d877d224b }}/kazuke/ecommerce:${{ github.sha }}'
+        images: '87462dev.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_5f9197e3e71f4d3fae5de36d877d224b }}/kazuke/ecommerce:${{ github.sha }}'
