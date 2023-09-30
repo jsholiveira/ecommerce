@@ -14,7 +14,7 @@ RUN mkdir /app
 
 COPY --from=build /project/target/app.war /app/app.war
 
-ENV PROFILE=prd
+ENV PROFILE=dev
 
 WORKDIR /app
 
